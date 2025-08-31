@@ -16,6 +16,7 @@ Goals:
 - [x] Add CRUD endpoints
 - [x] Use inversion of control and DI to register mail service
 - [x] Log exceptions
+- [x] Register in-memory datastore as a singleton via DI
 - [ ] Replace in memory database w//Entity Framework Core
 - [ ] Add search, filtering, and paging in API
 - [ ] Add security

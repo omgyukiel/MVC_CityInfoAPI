@@ -6,7 +6,6 @@ namespace CityInfo.API
     {
         public List<CityDto> Cities { get; set; }
 
-        public static CitiesDataStore Instance { get; } = new CitiesDataStore();
         public CitiesDataStore()
         {
             // dummy data
