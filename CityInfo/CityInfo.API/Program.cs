@@ -6,6 +6,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddProblemDetails(options =>
+{
+    options.CustomizeProblemDetails = ctx =>
+    {
+        ctx.ProblemDetails.Extensions.Add("additionalInfo", "Example of adding context to problem details in http responses.");
+        ctx.ProblemDetails.Extensions.Add("server", Environment.MachineName);
+
+    };
+});
 
 var app = builder.Build();
 
