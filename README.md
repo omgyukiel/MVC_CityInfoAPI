@@ -1,5 +1,5 @@
 # README
-An MVC REST API in which returns information about Cities - built from scratch.
+An MVC REST API which returns information about Cities - built from scratch.
 
 The purpose of this project is to learn the fundamnetal of ASP.NET Core Web APIs with MVC. 
 
