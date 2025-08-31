@@ -14,8 +14,8 @@ Goals:
 - [x] Register API and stand up web server
 - [x] Create API and return resources using the MVC pattern
 - [x] Add CRUD endpoints
-- [ ] Add inversion of control and DI
-- [ ] Log exceptions
+- [x] Use inversion of control and DI to register mail service
+- [x] Log exceptions
 - [ ] Replace in memory database w//Entity Framework Core
 - [ ] Add search, filtering, and paging in API
 - [ ] Add security
