@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CityInfo.API.Entities;
 using CityInfo.API.Models;
 using CityInfo.API.Services;
 using Microsoft.AspNetCore.Http;
@@ -107,27 +108,26 @@ namespace CityInfo.API.Controllers
                 createdPointOfInterestToReturn);
         }
 
-        //[HttpPut("{pointofinterestid}")]
-        //public ActionResult UpdatePointOfInterest(int cityid, int pointOfInterestId, PointOfInterestForUpdateDto pointOfInterest)
-        //{
-        //    var city = _citiesDataStore.Cities.FirstOrDefault(c => c.Id == cityid);
-        //    if (city == null)
-        //    {
-        //        return NotFound();
-        //    }
+        [HttpPut("{pointofinterestid}")]
+        public async Task<ActionResult> UpdatePointOfInterest(int cityId, int pointOfInterestId, PointOfInterestForUpdateDto pointOfInterest)
+        {
+            if (!await _cityInfoRepository.CityExistsAsync(cityId))
+            {
+                return NotFound();
+            }
+            var poiEntity = await
+               _cityInfoRepository.GetPointOfInterestForCityAsync(cityId, pointOfInterestId);
+            if (poiEntity == null)
+            {
+                _logger.LogInformation($"Point of interest with id {pointOfInterestId} wasn't found when accessing points of interest for city with id {cityId}.");
+                return NotFound();
+            }
+            
+            _mapper.Map(pointOfInterest, poiEntity);
+            await _cityInfoRepository.SaveChangesAsync();
 
-        //    var poi = city.PointsOfInterest
-        //        .FirstOrDefault(p => p.Id == pointOfInterestId);
-        //    if (poi == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    poi.Name = pointOfInterest.Name;
-        //    poi.Description = pointOfInterest.Description;
-
-        //    return NoContent();
-        //}
+            return NoContent();
+        }
         //[HttpPatch("{pointofinterestid}")]
         //public ActionResult PartiallyUpdatePointOfInterest(
         //    int cityId, int pointOfInterestId,
