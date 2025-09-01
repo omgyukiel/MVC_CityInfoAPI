@@ -42,5 +42,10 @@ namespace CityInfo.API.Services
                     .Where(p => p.CityId == cityId)
                     .ToListAsync();
         }
+        
+        public async Task<bool> CityExistsAsync(int cityId)
+        {
+            return await _context.Cities.AnyAsync(c => c.Id == cityId);
+        }
     }
 }
