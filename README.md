@@ -22,8 +22,9 @@ Goals:
 - [x] seed database
 - [x] introduce resository pattern to controllers
 - [x] add automapper mapped DTOs
-- [ ] create and remove resources with EF
-- [ ] convert all in memory controllers to use EF
+- [x] create, update, patch, delete resources with repository
+- [x] convert all in memory controllers to use EF
 - [ ] Add search, filtering, and paging in API
-- [ ] Add security
-- [ ] ..... TBD
+- [ ] secure api
+- [ ] version and document api with OpenAPI
+- [ ] deploy on azure [DO NOT PUSH SECRETS]
