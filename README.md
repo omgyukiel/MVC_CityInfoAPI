@@ -19,7 +19,8 @@ Goals:
 - [x] Register in-memory datastore via DI
 - [x] Add scoped configuration files
 - [x] migrate in memory database to SQL Lite w//Entity Framework Core
-- [ ] seed database
+- [x] seed database
+- [ ] convert in memory controllers to use ef
 - [ ] Add search, filtering, and paging in API
 - [ ] Add security
 - [ ] ..... TBD
