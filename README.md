@@ -20,8 +20,9 @@ Goals:
 - [x] Add scoped configuration files
 - [x] migrate in memory database to SQL Lite w//Entity Framework Core
 - [x] seed database
-- [ ] convert in memory controllers to use EF
-- [ ] introduce resository pattern
+- [x] introduce resository pattern to controllers
+- [ ] add automapper mapped DTOs
+- [ ] convert all in memory controllers to use EF
 - [ ] Add search, filtering, and paging in API
 - [ ] Add security
 - [ ] ..... TBD
