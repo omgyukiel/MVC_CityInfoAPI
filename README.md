@@ -18,7 +18,7 @@ Goals:
 - [x] Log exceptions w/Serilog
 - [x] Register in-memory datastore via DI
 - [x] Add scoped configuration files
-- [ ] Replace in memory database w//Entity Framework Core
+- [ ] migrate in memory database to SQL Lite w//Entity Framework Core
 - [ ] Add search, filtering, and paging in API
 - [ ] Add security
 - [ ] ..... TBD
