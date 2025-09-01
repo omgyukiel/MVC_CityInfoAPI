@@ -21,7 +21,8 @@ Goals:
 - [x] migrate in memory database to SQL Lite w//Entity Framework Core
 - [x] seed database
 - [x] introduce resository pattern to controllers
-- [ ] add automapper mapped DTOs
+- [x] add automapper mapped DTOs
+- [ ] create and remove resources with EF
 - [ ] convert all in memory controllers to use EF
 - [ ] Add search, filtering, and paging in API
 - [ ] Add security
