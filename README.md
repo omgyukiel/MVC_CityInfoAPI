@@ -24,8 +24,8 @@ Goals:
 - [x] add automapper mapped DTOs
 - [x] create, update, patch, delete resources with repository and deferred execution (expression trees)
 - [x] convert all in memory controllers to use EF
-- [ ] Add search, filtering, and paging in API
-- [ ] secure api
+- [x] Add search, filtering, and paging in API
+- [ ] secure api with tokens
 - [ ] version and document api with OpenAPI
 - [ ] deploy on azure [DO NOT PUSH SECRETS]
 
