@@ -11,21 +11,22 @@ code which abstracts the fundamentals away.
 It bothers me a lot that I can deliver full-stack React projects but I wouldn't have a clue as to where to start with .NET; it's time to fix that.
 
 Goals:
-- [x] Register API and stand up web server
-- [x] Create API and return resources using the MVC pattern
-- [x] Add CRUD endpoints
-- [x] Use inversion of control and DI to register mail service
-- [x] Log exceptions w/Serilog
-- [x] Register in-memory datastore via DI
-- [x] Add scoped configuration files
+- [x] register API and stand up web server
+- [x] create API and return resources using the MVC pattern
+- [x] add CRUD endpoints
+- [x] use inversion of control and DI to register mail service
+- [x] log exceptions w/Serilog
+- [x] register in-memory datastore via DI
+- [x] add scoped configuration files
 - [x] migrate in memory database to SQL Lite w//Entity Framework Core
 - [x] seed database
 - [x] introduce resository pattern to controllers
 - [x] add automapper mapped DTOs
 - [x] create, update, patch, delete resources with repository and deferred execution (expression trees)
 - [x] convert all in memory controllers to use EF
-- [x] Add search, filtering, and paging in API
-- [ ] secure api with tokens
+- [x] add search, filtering, and paging in API
+- [x] add jwt tokens
+- [ ] add authenticated API
 - [ ] version and document api with OpenAPI
 - [ ] deploy on azure [DO NOT PUSH SECRETS]
 
