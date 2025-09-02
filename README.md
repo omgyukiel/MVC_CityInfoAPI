@@ -22,9 +22,11 @@ Goals:
 - [x] seed database
 - [x] introduce resository pattern to controllers
 - [x] add automapper mapped DTOs
-- [x] create, update, patch, delete resources with repository
+- [x] create, update, patch, delete resources with repository and deferred execution (expression trees)
 - [x] convert all in memory controllers to use EF
 - [ ] Add search, filtering, and paging in API
 - [ ] secure api
 - [ ] version and document api with OpenAPI
 - [ ] deploy on azure [DO NOT PUSH SECRETS]
+
+Note, some API and DB designs best practices are considered - but the techiques and patterns employed are non-exhaustive. Since this project is meant to practice fundamentals, care for explicit scalability in the API is not implmeented.
