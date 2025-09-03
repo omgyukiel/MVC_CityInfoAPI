@@ -45,6 +45,13 @@ builder.Services.AddAuthentication("Bearer")
                 Convert.FromBase64String(builder.Configuration["Authentication:SecretForKey"]))
         };
     });
+builder.Services.AddAuthorization(options =>
+{     options.AddPolicy("MustBeFromFresno", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        policy.RequireClaim("city", "Fresno");
+    });
+});
 builder.Services.AddProblemDetails(options =>
 {
     options.CustomizeProblemDetails = ctx =>
