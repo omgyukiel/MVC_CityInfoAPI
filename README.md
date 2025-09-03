@@ -29,7 +29,7 @@ Goals:
 - [x] add authenticated API
 - [x] add policy based access control
 - [x] version api
-- [ ] document api with OpenAPI
+- [ ] document api with OpenAPI/Swashbuckle
 - [ ] deploy on azure
 
 Note, some API and DB designs best practices are considered - but the techiques and patterns employed are non-exhaustive. Since this project is meant to practice fundamentals, care for explicit scalability in the API is not implmeented.
