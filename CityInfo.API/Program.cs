@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Serilog;
 using System.Reflection;
 
@@ -92,6 +93,28 @@ builder.Services.AddSwaggerGen(setupAction =>
         var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
     setupAction.IncludeXmlComments(xmlCommentsFullPath);
+    
+    setupAction.AddSecurityDefinition("CityInfoApiBearerAuth", new()
+    {
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        Description = "Input your Bearer token in this format - Bearer {your token here} to access this API"
+    });
+
+    setupAction.AddSecurityRequirement(new()
+    {
+        {
+            new()
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "CityInfoApiBearerAuth"
+                }
+            },
+            new List<string>()
+        }
+    });
 });
 
 builder.Services.AddProblemDetails(options =>
