@@ -94,7 +94,7 @@ namespace CityInfo.API.Controllers
                     userName ?? "",
                     "Kenny",
                     "Yukiel",
-                    "New Vegas");
+                    "Fresno");
             }
             return null;
         }
