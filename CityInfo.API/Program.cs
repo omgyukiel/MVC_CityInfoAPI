@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using AutoMapper;
 using CityInfo.API;
 using CityInfo.API.DbContexts;
@@ -45,6 +46,7 @@ builder.Services.AddAuthentication("Bearer")
                 Convert.FromBase64String(builder.Configuration["Authentication:SecretForKey"]))
         };
     });
+
 builder.Services.AddAuthorization(options =>
 {     options.AddPolicy("MustBeFromFresno", policy =>
     {
@@ -52,6 +54,14 @@ builder.Services.AddAuthorization(options =>
         policy.RequireClaim("city", "Fresno");
     });
 });
+
+builder.Services.AddApiVersioning(setupAction =>
+{
+    setupAction.ReportApiVersions = true;
+    setupAction.AssumeDefaultVersionWhenUnspecified = true;
+    setupAction.DefaultApiVersion = new ApiVersion(1, 0);
+}).AddMvc();
+
 builder.Services.AddProblemDetails(options =>
 {
     options.CustomizeProblemDetails = ctx =>

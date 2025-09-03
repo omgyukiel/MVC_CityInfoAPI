@@ -28,7 +28,8 @@ Goals:
 - [x] add jwt tokens
 - [x] add authenticated API
 - [x] add policy based access control
-- [ ] version and document api with OpenAPI
+- [x] version api
+- [ ] document api with OpenAPI
 - [ ] deploy on azure
 
 Note, some API and DB designs best practices are considered - but the techiques and patterns employed are non-exhaustive. Since this project is meant to practice fundamentals, care for explicit scalability in the API is not implmeented.
