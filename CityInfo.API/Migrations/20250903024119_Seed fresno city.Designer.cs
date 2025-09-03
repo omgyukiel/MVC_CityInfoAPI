@@ -2,6 +2,7 @@
 using CityInfo.API.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CityInfo.API.Migrations
 {
     [DbContext(typeof(CityInfoContext))]
-    partial class CityInfoContextModelSnapshot : ModelSnapshot
+    [Migration("20250903024119_Seed fresno city")]
+    partial class Seedfresnocity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
@@ -53,12 +56,6 @@ namespace CityInfo.API.Migrations
                             Id = 3,
                             Description = "The one with that big tower.",
                             Name = "Paris"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "The one in the middle of California.",
-                            Name = "Fresno"
                         });
                 });
 
@@ -128,20 +125,6 @@ namespace CityInfo.API.Migrations
                             CityId = 3,
                             Description = "The world's largest museum.",
                             Name = "The Louvre"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CityId = 4,
-                            Description = "Deeply underrated, a sanctuary for animals hidden in the valley.",
-                            Name = "Fresno Chaffee Zoo"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            CityId = 4,
-                            Description = "A beauitful garden hand carved out of the ground - an escape from the scorching heat.",
-                            Name = "Forestiere Underground Gardens"
                         });
                 });
 

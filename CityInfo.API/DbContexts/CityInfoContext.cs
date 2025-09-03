@@ -31,6 +31,11 @@ namespace CityInfo.API.DbContexts
                     {
                         Id = 3,
                         Description = "The one with that big tower."
+                    },
+                    new City("Fresno")
+                    {
+                        Id = 4,
+                        Description = "The one in the middle of California."
                     });
             modelBuilder.Entity<PointOfInterest>()
                 .HasData(
@@ -47,12 +52,12 @@ namespace CityInfo.API.DbContexts
                         CityId = 1,
                         Description = "A 102-story skyscraper located in Midtown Manhattan."
                     },
-                        new PointOfInterest("Cathedral")
-                        {
-                            Id = 3,
-                            CityId = 2,
-                            Description = "A Gothic style cathedral, conceived by architects Jan and Pieter Appelmans."
-                        },
+                    new PointOfInterest("Cathedral")
+                    {
+                        Id = 3,
+                        CityId = 2,
+                        Description = "A Gothic style cathedral, conceived by architects Jan and Pieter Appelmans."
+                    },
                     new PointOfInterest("Antwerp Central Station")
                     {
                         Id = 4,
@@ -70,6 +75,18 @@ namespace CityInfo.API.DbContexts
                         Id = 6,
                         CityId = 3,
                         Description = "The world's largest museum."
+                    },
+                    new PointOfInterest("Fresno Chaffee Zoo")
+                    {
+                        Id = 7,
+                        CityId = 4,
+                        Description = "Deeply underrated, a sanctuary for animals hidden in the valley."
+                    },
+                    new PointOfInterest("Forestiere Underground Gardens")
+                    {
+                        Id = 8,
+                        CityId = 4,
+                        Description = "A beauitful garden hand carved out of the ground - an escape from the scorching heat."
                     });
 
             base.OnModelCreating(modelBuilder);

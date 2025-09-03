@@ -61,6 +61,23 @@ namespace CityInfo.API
                             Name = "The Louvre",
                             Description = "The world's largest museum." },
                      }
+                },
+                new CityDto()
+                {
+                    Id = 4,
+                    Name = "Fresno",
+                    Description = "The one in the middle of California",
+                    PointsOfInterest = new List<PointOfInterestDto>()
+                    {
+                        new PointOfInterestDto() {
+                            Id = 7,
+                            Name = "Fresno Chaffee Zoo",
+                            Description = "Deeply underrated, a sanctuary for animals hidden in the valley." },
+                        new PointOfInterestDto() {
+                            Id = 8,
+                            Name = "Forestiere Underground Gardens",
+                            Description = "A beauitful garden hand carved out of the ground - an escape from the scorching heat." },
+                    }
                 }
             };
         }
