@@ -45,7 +45,7 @@ namespace CityInfo.API.Controllers
         /// <param name="id">The id of the city to get</param>
         /// <param name="includePointsOfInterest">Bool to include POIs or not</param>
         /// <returns>A city with our without POIs</returns>
-        /// <response code="200">Returns the requestetd city</response>
+        /// <response code="200">Returns the requested city</response>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
