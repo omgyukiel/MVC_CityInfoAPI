@@ -56,9 +56,10 @@ namespace CityInfo.API.Controllers
                 return Unauthorized();
             }
 
-            // Create token
+            // Create token from dev secret
             var securityKey = new SymmetricSecurityKey(
                 Convert.FromBase64String(_configuration["Authentication:SecretForKey"]));
+            // decode base64 back into raw bytes and create signing key
             var signingCredentials = new SigningCredentials(
                 securityKey, SecurityAlgorithms.HmacSha256);
 
