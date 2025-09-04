@@ -1,0 +1,51 @@
+@schema=https
+@hostname=localhost 
+@port=7276
+
+GET {{schema}}://{{hostname}}:{{port}}/api/v2/cities
+
+###
+
+GET {{schema}}://{{hostname}}:{{port}}/api/v2/cities
+Accept: application/xml
+
+###
+
+
+# @name createpoi
+POST {{schema}}://{{hostname}}:{{port}}/api/v2/cities/1/pointsofinterest
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZ2l2ZW5fbmFtZSI6Iktlbm55IiwiZmFtaWx5X25hbWUiOiJZdWtpZWwiLCJjaXR5IjoiRnJlc25vIiwibmJmIjoxNzU2OTY0MjY5LCJleHAiOjE3NTY5Njc4NjksImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNzYiLCJhdWQiOiJjaXR5aW5mb2FwaSJ9.eJDFyoTv_oqhcsqY9_X-2RNMo1lu_Psmf_ps0frgb88
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "A name for testing",
+  "description": "A description for testing"
+} 
+
+###
+
+@poiid = {{createpoi.response.body.$.id}}
+
+GET {{schema}}://{{hostname}}:{{port}}/api/v2/cities/1/pointsofinterest/{{poiid}}
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZ2l2ZW5fbmFtZSI6Iktlbm55IiwiZmFtaWx5X25hbWUiOiJZdWtpZWwiLCJjaXR5IjoiRnJlc25vIiwibmJmIjoxNzU2OTY0MjY5LCJleHAiOjE3NTY5Njc4NjksImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNzYiLCJhdWQiOiJjaXR5aW5mb2FwaSJ9.eJDFyoTv_oqhcsqY9_X-2RNMo1lu_Psmf_ps0frgb88
+
+###
+
+// get a token 
+POST {{schema}}://{{hostname}}:{{port}}/api/authentication/authenticate
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "password": "P@ssw0rd"
+}
+
+###
+
+// authenticated GET request
+GET {{schema}}://{{hostname}}:{{port}}/api/v2/cities
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZ2l2ZW5fbmFtZSI6Iktlbm55IiwiZmFtaWx5X25hbWUiOiJZdWtpZWwiLCJjaXR5IjoiRnJlc25vIiwibmJmIjoxNzU2OTY0MjY5LCJleHAiOjE3NTY5Njc4NjksImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNzYiLCJhdWQiOiJjaXR5aW5mb2FwaSJ9.eJDFyoTv_oqhcsqY9_X-2RNMo1lu_Psmf_ps0frgb88
+
+###
