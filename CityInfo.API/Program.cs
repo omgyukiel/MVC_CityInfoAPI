@@ -4,6 +4,7 @@ using AutoMapper;
 using CityInfo.API;
 using CityInfo.API.DbContexts;
 using CityInfo.API.Services;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -127,6 +128,11 @@ builder.Services.AddProblemDetails(options =>
     };
 });
 
+builder.Services.Configure <ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+});
+
 #if DEBUG
 builder.Services.AddTransient<IMailService, LocalMailService>();
 #else
@@ -146,7 +152,10 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler();
 }
-else if (app.Environment.IsDevelopment())
+
+app.UseForwardedHeaders();
+
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI(setupAction =>

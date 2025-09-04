@@ -1065,3 +1065,7 @@ LIMIT 1
 2025-09-03 22:43:15.330 -07:00 [INF] Executed endpoint 'CityInfo.API.Controllers.AuthenticationController.Authenticate (CityInfo.API)'
 2025-09-03 22:43:15.330 -07:00 [DBG] Connection id "0HNFBEMAABGPD" completed keep alive response.
 2025-09-03 22:43:15.331 -07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7276/api/authentication/authenticate - 401 266 application/problem+json; charset=utf-8 31.4338ms
+2025-09-03 22:44:18.521 -07:00 [DBG] Connection id "0HNFBEMAABGPD" received FIN.
+2025-09-03 22:44:18.522 -07:00 [DBG] Connection id "0HNFBEMAABGPD" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-09-03 22:44:18.523 -07:00 [DBG] Connection id "0HNFBEMAABGPD" disconnecting.
+2025-09-03 22:44:18.536 -07:00 [DBG] Connection id "0HNFBEMAABGPD" stopped.
